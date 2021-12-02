@@ -1,0 +1,2 @@
+match_gazebo:mir/mir_description:mir/mir_gazebo:mir/mir_navigation
+-DCATKIN_DEVEL_PREFIX=/home/hp/Desktop/panda_moveit/devel -DCMAKE_INSTALL_PREFIX=/home/hp/Desktop/panda_moveit/install -G Unix Makefiles

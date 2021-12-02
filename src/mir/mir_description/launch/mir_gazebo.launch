@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<launch>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find mir_description)/worlds/world.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="recording" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!-- Convert an xacro and put on parameter server -->
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find mir_description)/urdf/mir_200/mir_200.gazebo.urdf'" />
+
+  <!-- Spawn a robot into Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen"
+        args="-param robot_description -urdf -model mir
+        -x 2.5 -y 2.5 -z 0" />
+
+  <!-- Robots state publisher -->
+
+  <!-- Starting Joint state publisher node which will publish the joint values   -->
+
+ 
+    
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(find mir_description)/urdf/mir_200/mir_200.gazebo.urdf'"/>
+
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher">
+
+        <param name="use_gui" value="False"/>
+    </node>
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    </node>
+
+
+    
+
+
+</launch>

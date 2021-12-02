@@ -1,0 +1,8 @@
+prefix=/home/hp/Desktop/panda_moveit/devel
+
+Name: match_gazebo
+Description: Description of match_gazebo
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

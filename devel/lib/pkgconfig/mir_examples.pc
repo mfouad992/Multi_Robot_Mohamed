@@ -1,0 +1,8 @@
+prefix=/home/hp/Desktop/panda_moveit/devel
+
+Name: mir_examples
+Description: Description of mir_examples
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
